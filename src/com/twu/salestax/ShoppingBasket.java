@@ -12,6 +12,8 @@ public class ShoppingBasket {
     }
 
     public void start() {
-        item = parser.extractItemDetails(consoleView.readInput());
+        Item item = parser.extractItemDetails(consoleView.readInput());
+        Double salexTax = item.calculateSalesTax();
+        consoleView.display(salexTax);
     }
 }

@@ -12,7 +12,7 @@ public class ParserTest {
     public void shouldBeAbleToParseTheInput() {
         Item itemStub = mock(Item.class);
         ExemptedItem exemptedItem = mock(ExemptedItem.class);
-        Parser parser = new Parser(itemStub,exemptedItem);
+        Parser parser = new Parser(exemptedItem);
 
         String[] actualItems = {"1", "book", "at", "12.49"};
 
@@ -23,10 +23,12 @@ public class ParserTest {
 //    public void shouldExtractItemDetails() {
 //        Item itemStub = mock(Item.class);
 //        ExemptedItem exemptedItem = mock(ExemptedItem.class);
-//        Parser parser = new Parser(itemStub,exemptedItem);
+//        Parser parser = new Parser(exemptedItem);
 //
 //        Item actualItems = new Item(1, "bookat", 12.49,exemptedItem);
 //
 //        assertThat(parser.extractItemDetails("1 book at 12.49"), is(equalTo(itemStub)));
 //    }
+
+
 }

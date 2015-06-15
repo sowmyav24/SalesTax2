@@ -4,11 +4,11 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class Parser {
-    private Item item;
+    // private Item item;
     private ExemptedItem exemptedItem;
 
-    Parser(Item item, ExemptedItem exemptedItem) {
-        this.item = item;
+    Parser(ExemptedItem exemptedItem) {
+        //this.item = item;
         this.exemptedItem = exemptedItem;
     }
 
@@ -17,8 +17,7 @@ public class Parser {
     }
 
     public Item extractItemDetails(String input) {
-        String[] subString;
-        subString = parseInput(input);
+        String[] subString = input.split(" ");
         String details = "";
         for (int i = 1; i < subString.length - 1; i++) {
             details += subString[i];

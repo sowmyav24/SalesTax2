@@ -7,10 +7,10 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class ConsoleViewTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -34,6 +34,16 @@ public class ConsoleViewTest {
 
         assertEquals(inputData, actualOption);
     }
+
+    @Test
+    public void shouldPrintSalesTax() {
+        ConsoleView consoleView = new ConsoleView(new Scanner(System.in));
+
+        consoleView.display(12.49);
+
+        assertEquals("Sales Tax 12.49\n", outContent.toString());
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);

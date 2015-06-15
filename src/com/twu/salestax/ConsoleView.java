@@ -12,4 +12,8 @@ public class ConsoleView {
     public String readInput() {
         return scanner.nextLine();
     }
+
+    public void display(Double salexTax) {
+        System.out.println("Sales Tax "+salexTax);
+    }
 }
