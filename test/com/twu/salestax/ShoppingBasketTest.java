@@ -13,10 +13,11 @@ public class ShoppingBasketTest {
     public void shouldParseTheInput() {
         ConsoleView consoleViewStub = mock(ConsoleView.class);
         Parser parserStub = mock(Parser.class);
-        ShoppingBasket shoppingBasket = new ShoppingBasket(consoleViewStub, parserStub);
+        Item itemStub = mock(Item.class);
+        ShoppingBasket shoppingBasket = new ShoppingBasket(consoleViewStub, parserStub, itemStub);
 
         shoppingBasket.start();
 
-        verify(parserStub, timeout(1)).parseInput(anyString());
+        verify(parserStub, timeout(1)).extractItemDetails(anyString());
     }
 }

@@ -12,7 +12,13 @@ public class Item {
             this.price = price;
         }
 
-        public String returnItemName() {
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    public String returnItemName() {
             return this.itemName;
         }
+
 }

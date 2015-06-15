@@ -4,15 +4,27 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 public class ParserTest {
 
     @Test
     public void shouldBeAbleToParseTheInput() {
-        Parser parser = new Parser();
+        Item itemStub = mock(Item.class);
+        Parser parser = new Parser(itemStub);
 
         String[] actualItems = {"1", "book", "at", "12.49"};
 
         assertThat(parser.parseInput("1 book at 12.49"), is(actualItems));
     }
+
+//    @Test
+//    public void shouldExtractItemDetails() {
+//        Item itemStub = mock(Item.class);
+//        Parser parser = new Parser(itemStub);
+//
+//        Item actualItems = new Item(1, "bookat", 12.49);
+//
+//        assertThat(parser.extractItemDetails("1 book at 12.49"), is(equalTo(itemStub)));
+//    }
 }
