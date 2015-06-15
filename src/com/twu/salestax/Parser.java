@@ -5,9 +5,11 @@ import static java.lang.Integer.parseInt;
 
 public class Parser {
     private Item item;
+    private ExemptedItem exemptedItem;
 
-    Parser(Item item) {
+    Parser(Item item, ExemptedItem exemptedItem) {
         this.item = item;
+        this.exemptedItem = exemptedItem;
     }
 
     public String[] parseInput(String input) {
@@ -21,7 +23,7 @@ public class Parser {
         for (int i = 1; i < subString.length - 1; i++) {
             details += subString[i];
         }
-        item = new Item(parseInt(subString[0]), details, parseDouble(subString[subString.length - 1]));
+        Item item = new Item(parseInt(subString[0]), details, parseDouble(subString[subString.length - 1]), this.exemptedItem);
         return item;
     }
 }
