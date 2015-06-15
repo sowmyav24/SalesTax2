@@ -13,7 +13,5 @@ public class ItemTest {
         String actualName = "Book";
 
         assertEquals(item.returnItemName(), actualName);
-
     }
-
 }
